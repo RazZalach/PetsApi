@@ -103,5 +103,30 @@ module.exports={
 
     getAllPets:(req,res)=>{
         return res.status(200).json(PetsArray);
+    },
+    addNewPet: (req, res) => {
+      const { Type, Name, Age, Color, PicUrl, ContactPhone, IsAdupted } = req.body;
+  
+      // Validate if all required fields are provided
+      if (!Type || !Name || !Age || !Color || !PicUrl || !ContactPhone || IsAdupted === undefined) {
+        return res.status(400).json({ error: "Please provide all required fields." });
+      }
+  
+      // Create a new pet object
+      const newPet = {
+        Type,
+        Name,
+        Age: parseFloat(Age), // Ensure Age is parsed as a float
+        Color,
+        PicUrl,
+        ContactPhone,
+        IsAdupted: !!IsAdupted, // Convert IsAdupted to a boolean
+      };
+  
+      // Add the new pet to PetsArray
+      PetsArray.push(newPet);
+  
+      return res.status(201).json({ message: "New pet added successfully.", pet: newPet });
     }
+  
 };
