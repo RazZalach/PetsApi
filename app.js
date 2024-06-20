@@ -22,10 +22,24 @@ app.use('/teachers', Teachers_Router); // כדי להשתמש בראוטר של 
 const Students_Router = require('./api/v1/routes/Students');
 app.use('/students', Students_Router); // כדי להשתמש בראוטר של מורים אני חייב להשתמש בניתוב Students 
 
+
+const Zoo_Router = require('./api/v1/routes/Zoo_Emp');
+app.use('/zoo', Zoo_Router); // כדי להשתמש בראוטר של מורים אני חייב להשתמש בניתוב Students 
+
+
+
+
+
+
+
+
 const Bitly_Router = require('./api/v1/routes/Bitly');
 app.use('/bitly',Bitly_Router);
 const Pets_Router = require('./api/v1/routes/Pets');
 app.use('/pets',Pets_Router);
+
+const Weather_Router = require('./api/v1/routes/Weather');
+app.use('/weather',Weather_Router);
 
 
 /// עד לפה נטען כל ההגדרות והשימוש בצד השרת 
