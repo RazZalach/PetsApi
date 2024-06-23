@@ -1,4 +1,4 @@
-const API_KEY = 'GDhsabwo5iScv7cjyyNBFzHo8GQuOgR4';
+const API_KEY = 'VNhnznKcSnVifrkUTgAZbrl0Gr1OA7Rn';
 
 module.exports = {
     apiAutoComplete: async (req, res) => {
